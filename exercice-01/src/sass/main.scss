@@ -1,0 +1,144 @@
+// Variables
+@import "variables";
+
+
+body {
+  background-color: $dark-blue;
+  margin: 0;
+  font-family: degular,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  height: 100vh;
+  position: 'relative';
+  
+}
+
+h1 {
+  font-family: degular-display,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 33% 34% 33%;
+  grid-template-areas: 
+    ' . top top-right'
+    ' . middle . '
+    ' . bottom . '
+  ;
+  .wave-corner {
+    width: 570px;
+    height: 380px;
+  }
+  .top {
+    grid-area: top;
+    justify-self: center;
+    align-self: end;
+    img {
+      width: 255px;
+      height: 90px;
+    }
+  }
+  .top-right {
+    grid-area: top-right;
+    display: flex;
+    padding: 1em;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: middle;
+    position: relative;
+    p {
+      color: $light-blue;
+      font-size: 55px;
+      text-align: center;
+      width: 1000px;
+      z-index: 1;
+
+    }
+    p:before {
+      background: url('../../assets/imgs/star-2.svg');
+      background-size: 100%;
+      display: inline-block;
+      content: "";
+      width: 124px;
+      height: 123px;
+      position: relative;
+      top: 10px;
+      left: 52px;
+      z-index: -1;
+    }
+    .redstar {
+      align-self: flex-start;
+      position: absolute;
+      top: 35px;
+      left: -20px;
+      z-index: -1;
+    }
+    .greystar {
+      align-self: flex-end;
+      position: absolute;
+      top: 205px;
+      right: 15px;
+    }
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: bottom;
+    position: relative;
+    p {
+      margin: 0px;
+      color: $white;
+      font-size: 30px;
+    }
+    .red-box {
+      display: flex;
+      justify-content: center;
+      background-color: $dark-orange;
+      transform: rotate(-1deg);
+      width: 535px;
+      height: 99px;
+    }
+    .orange-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $light-orange;
+      transform: rotate(-2deg);
+      margin-top: -15px;
+      width: 500px;
+      height: 90px;
+    }
+    .ellipse {
+      position: absolute;
+      left: 100px;
+      top: 155px;
+    }
+  }
+  .bottom:before {
+    background: url('../../assets/imgs/ellipse-1.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    content: "";
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 66px;
+    left: 111px;
+    z-index: -1;
+  }
+  .wave-corner {
+    position: absolute;
+  }
+}
